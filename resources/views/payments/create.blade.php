@@ -34,7 +34,7 @@
                             </div>
 
                             <x-input name="status" id="status" value="Pending" hidden />
-                            <x-button>Next</x-button>
+                            <x-button>Submit</x-button>
                         </form>
 
                         <script>
