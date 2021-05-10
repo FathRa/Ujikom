@@ -12,7 +12,11 @@
                     <div class="w-5/6 flex justify-between">
                         
                         <div class="h-48 mr-2">
-                            <img class="mr-5 object-fit w-full" src="{{ asset('storage/'. $payment->bukti) }}" alt="bukti">
+                            @if ($payment->bukti)
+                                <img class="mr-5 object-fit w-full" src="{{ asset('storage/'. $payment->bukti) }}" alt="bukti">
+                            @else
+                                <p class="text-xl">Tidak ada Bukti Pembayaran</p>
+                            @endif
                         </div>
 
                         
@@ -23,12 +27,19 @@
                             <div class="grid-cols-auto">
                                 <div class="mb-2">
                                     <x-label for="user_id" :value="__('Name')"/>
-                                    <x-input class="w-full" type="text" id="user_id" value="{{ old('user_id') ?? $payment->user->name}}" />
+                                    <x-input class="w-full" type="text" id="user_id" value="{{ old('user_id') ?? $payment->user->name}}" disabled />
                                 </div>
-        
+
+                                {{ $payment->kela()->jurusan }}
+                                
+                                {{-- <div class="mb-2">
+                                    <x-label for="kelas_id" :value="__('Kelas')" />
+                                    <x-input type="text" id="kelas_id" value="{{ old('kelas_id') ?? $payment->kela()->jurusan }}" disabled/>
+                                </div> --}}
+
                                 <div>
                                     <x-label for="spp_id" :value="__('SPP')"/>
-                                    <x-input type="text" id="spp_id" value="{{ old('spp_id') ?? $payment->spp->nominal }}"/>
+                                    <x-input type="text" id="spp_id" value="{{ old('spp_id') ?? $payment->spp->nominal }}" disabled/>
                                 </div>
     
                                 <div>
@@ -43,7 +54,7 @@
                                     <option value="Pending">Pending</option>
                                 </select>
                             </div>
-
+                            
                             <div class="mt-2">
                                 <x-button>
                                     {{ __('Update') }}

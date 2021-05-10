@@ -59,4 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Payment::class);
     }
+
+    public function kela()
+    {
+        return $this->belongsTo(Kela::class);
+    }
 }

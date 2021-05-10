@@ -17,7 +17,7 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="nis" :value="__('NIS')" />
+                <x-label for="nis" :value="__('NIS / NIP')" />
 
                 <x-input id="nis" class="block mt-1 w-full" type="text" name="nis" :value="old('nis')" required autofocus />
             </div>

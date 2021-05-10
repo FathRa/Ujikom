@@ -18,6 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->foreignId('admin_id')->nullable()->constrained('users');
             $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('spp_id')->nullable()->constrained('spps');
+            $table->foreignId('kelas_id')->nullable()->constrained('kelas');
             $table->integer('jumlah')->nullable();
             $table->integer('total')->nullable();
             $table->string('bukti')->nullable();

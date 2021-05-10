@@ -24,6 +24,8 @@
                                 </select>
                             </div>
 
+                            <input type="text" name="kelas_id" id="kelas_id" value="{{ auth()->user()->kelas_id }}" hidden>
+
                             <div class="mb-2">
                                 <x-label for="months" :value="__('Bulan')" />
                                 <select name="months[]" id="months" multiple class="w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
@@ -31,10 +33,16 @@
                                         <option value="{{ $month->id }}">{{ $month->name }}</option>
                                    @endforeach
                                 </select>
+
+                                @error('months')
+                                    <div class="text-red-700">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <x-input name="status" id="status" value="Pending" hidden />
-                            <x-button>Submit</x-button>
+                            <x-button>Next</x-button>
                         </form>
 
                         <script>

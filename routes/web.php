@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::group(['middleware' => 'registration_completed'], function (){
+    Route::group(['middleware' => 'registration_completed'], function () {
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('payments.create-2/{id}', [PaymentController::class, 'store2'])->name('payments.store-2');
 
     Route::get('profile.create', [ProfileController::class, 'create'])->name('profiles.create');
-    Route::put('profile.store', [ProfileController::class, 'store']);
+    Route::put('profile.store', [ProfileController::class, 'store'])->name('profiles.store');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

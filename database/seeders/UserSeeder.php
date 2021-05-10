@@ -16,8 +16,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         $users = [
-            ['nis' => '19390901 194506 1 001',         'name' => 'Admin','role' => 'Admin', 'password' => Hash::make('admin1234'), 'kelas_id' => 0,],
-            ['nis' => '19390901 194506 1 002',         'name' => 'Petugas','role' => 'Petugas', 'password' => Hash::make('admin1234'), 'kelas_id' => 0],
+            ['nis' => '19390901 194506 1 001',         'name' => 'Admin','role' => 'Admin', 'password' => Hash::make('admin1234'), 'kelas_id' => 1,],
+            ['nis' => '19390901 194506 1 002',         'name' => 'Petugas','role' => 'Petugas', 'password' => Hash::make('admin1234'), 'kelas_id' => 1],
             ['nis' => '01182134131', 'name' => 'Adera',            'password' => Hash::make('1234567890'), 'kelas_id' => 17],
             ['nis' => '01182134132', 'name' => 'Agus',             'password' => Hash::make('1234567890'), 'kelas_id' => 17],
             ['nis' => '01182134134', 'name' => 'Amila',            'password' => Hash::make('1234567890'), 'kelas_id' => 17],

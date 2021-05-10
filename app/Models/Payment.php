@@ -9,14 +9,9 @@ class Payment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['admin_id', 'user_id', 'spp_id', 'total', 'status', 'bukti', 'keterangan', 'jumlah_bayar'];
+    protected $fillable = ['admin_id', 'user_id', 'spp_id', 'total', 'status', 'bukti', 'kelas_id'];
 
     public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function admin()
     {
         return $this->belongsTo(User::class);
     }
@@ -29,5 +24,10 @@ class Payment extends Model
     public function months()
     {
         return $this->belongsToMany(Month::class);
+    }
+
+    public function kela()
+    {
+        return $this->belongsTo(Kela::class);
     }
 }

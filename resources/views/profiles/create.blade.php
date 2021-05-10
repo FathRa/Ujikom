@@ -41,6 +41,11 @@
                         </div>
 
                         <div class="mb-2">
+                            <x-label for="" :value="__('Kelas')" />
+                            <x-input type="text" name="" id="" value="{{ auth()->user()->kela->tingkat }}" />
+                        </div>
+
+                        <div class="mb-2">
                             <x-label for="phone" :value="__('Phone')" />
                             <x-input type="text" name="phone" id="phone" value="{{ auth()->user()->phone }}" />
                         </div>

@@ -6,6 +6,7 @@ use App\Models\{Month, Payment, Spp, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PaymentController extends Controller
 {
@@ -47,34 +48,37 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'months' => 'required',
+        ]);
+
         $spps = Spp::find($request->spp_id);
         $total = count(request('months')) * $spps->nominal;
         
         $payments = Payment::create([
             'user_id'   => auth()->user()->id,
             'spp_id'    => $request->spp_id,
+            'kelas_id'  => $request->kelas_id,
             'status'    => $request->status,
             'total'     => $total, 
         ]);
         
         $payments->months()->sync(request('months'));
 
-        return redirect('payments');
-    }
-
-    public function create2(Payment $payment, $id)
-    {
-        $payments = Payment::find($id);
-        
         return view('payments.create-2', compact('payments'));
     }
 
     public function store2(Request $request, $id)
     {   
+        $request->validate([
+            'bukti' => 'required|mimes:jpg,png,jpeg',
+        ]);
+
         $payments = Payment::find($id);
         $payments->bukti = $request->file('bukti')->store('images/bukti');
         $payments->save();
-
+        
+        Alert::toast('Pembayaran anda akan diproses oleh Admin','success');
         return redirect('payments');
     }
 
@@ -126,6 +130,7 @@ class PaymentController extends Controller
 
         $payment->save();
 
+        Alert::toast('Pembayaran telah dikonfirmasi!', 'success');
         return redirect()->route('payments.index');
     }
 
@@ -141,6 +146,7 @@ class PaymentController extends Controller
         Storage::delete($payment->bukti);
         $payment->delete();
 
+        Alert::toast('Pembayaran telah di Delete !', 'error');
         return redirect()->back();
     }
 }

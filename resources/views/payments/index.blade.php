@@ -38,17 +38,20 @@
                                 <td>{{ number_format($item->spp->nominal) }}</td>
                                 <td>{{ $item->months()->get()->implode('name', ', ') }}</td>
                                 <td>{{ number_format($item->total) }}</td>
-                                <td class="flex justify-center">@if ($item->bukti)
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                <td class="flex justify-center">
+                                    @if ($item->bukti)
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
                                     </svg>
 
                                     @else
-                                    <a href="{{ route('payments.create-2',$item->id) }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-700" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
                                     @endif</td>
                                 <td>{{ $item->status }}</td>
                                 <td>{{ $item->created_at->format('d M Y, H:m') }}</td>

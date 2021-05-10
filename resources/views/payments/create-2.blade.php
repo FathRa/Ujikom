@@ -13,7 +13,18 @@
                         @csrf
                         @method('put')
 
-                        {{ $payments->total }}
+                        <div class="mb-2">
+                            <x-label for="bulan" :value="__('Bulan')" />
+                            <x-input type="text" name="bulan" id="bulan" value="{{ $payments->months()->get()->implode('name', ', ') }}" disabled />
+                        </div>
+
+                        <div class="mb-2">
+                            <x-label for="total" :value="__('Total')" />
+                            <x-input type="text" name="total" id="total" value="{{ number_format($payments->total) }}" disabled/>
+                        </div>
+
+                        <p class="text-lg text-red-700"><strong>*</strong>Silahkan Transfer ke Rekening : 08880234 A/N SMK CIPTA-SKILL</p>
+
                         <div class="mb-2">
                             <x-label for="bukti" :value="__('Bukti')" />
                             <x-input type="file" id="bukti" name="bukti"/>
