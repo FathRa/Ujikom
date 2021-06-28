@@ -20,7 +20,7 @@ class RegisterStepTwoController extends Controller
         auth()->user()->update([
             'address' => $request->address,
             'phone' => $request->phone,
-            'kelas_id' => $request->kelas_id
+            'kela_id' => $request->kela_id
         ]);
 
         return redirect('dashboard');

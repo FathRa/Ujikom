@@ -34,8 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('payments.create-2/{id}', [PaymentController::class, 'create2'])->name('payments.create-2');
     Route::put('payments.create-2/{id}', [PaymentController::class, 'store2'])->name('payments.store-2');
 
-    Route::get('profile.create', [ProfileController::class, 'create'])->name('profiles.create');
-    Route::put('profile.store', [ProfileController::class, 'store'])->name('profiles.store');
+    Route::get('profile.create/{id}', [ProfileController::class, 'create'])->name('profiles.create');
+    Route::put('profile.create', [ProfileController::class, 'store'])->name('profiles.store');
 });
 
 require __DIR__ . '/auth.php';

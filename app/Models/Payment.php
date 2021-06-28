@@ -30,4 +30,9 @@ class Payment extends Model
     {
         return $this->belongsTo(Kela::class);
     }
+
+    public function admin()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

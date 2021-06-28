@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('nis');
             $table->string('password');
             $table->string('role')->nullable();
-            $table->foreignId('kelas_id')->nullable()->constrained('kelas');
+            $table->foreignId('kela_id')->nullable();
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('profile')->nullable();

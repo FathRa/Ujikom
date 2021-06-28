@@ -29,8 +29,6 @@
                                     <x-label for="user_id" :value="__('Name')"/>
                                     <x-input class="w-full" type="text" id="user_id" value="{{ old('user_id') ?? $payment->user->name}}" disabled />
                                 </div>
-
-                                {{ $payment->kela()->jurusan }}
                                 
                                 {{-- <div class="mb-2">
                                     <x-label for="kelas_id" :value="__('Kelas')" />

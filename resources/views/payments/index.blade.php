@@ -14,7 +14,7 @@
                         <thead class="py-3 bg-gray-400 p-2">
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                 <th class="px-4 py-2">#</th>
-                                <th>Admin</th>
+                                <th class="md:hidded">Admin</th>
                                 <th>User</th>
                                 <th>SPP</th>
                                 <th>Bulan</th>
