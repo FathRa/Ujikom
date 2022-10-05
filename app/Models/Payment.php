@@ -26,9 +26,9 @@ class Payment extends Model
         return $this->belongsToMany(Month::class);
     }
 
-    public function kela()
+    public function kelas()
     {
-        return $this->belongsTo(Kela::class);
+        return $this->belongsTo(Kelas::class);
     }
 
     public function admin()

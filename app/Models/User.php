@@ -51,7 +51,7 @@ class User extends Authenticatable
     }
 
     public function isPetugas()
-    {   
+    {
         return $this->role == 'Petugas' ? true : null;
     }
 
@@ -60,8 +60,8 @@ class User extends Authenticatable
         return $this->hasMany(Payment::class);
     }
 
-    public function kela()
+    public function kelas()
     {
-        return $this->belongsTo(Kela::class);
+        return $this->belongsTo(Kelas::class);
     }
 }
