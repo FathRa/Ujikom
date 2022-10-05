@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kela;
+use App\Models\Kelas;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,7 +10,7 @@ class RegisterStepTwoController extends Controller
 {
     public function create()
     {
-        $kelas = Kela::get();
+        $kelas = Kelas::get();
 
         return view('auth.register-step2', compact('kelas'));
     }
@@ -20,7 +20,7 @@ class RegisterStepTwoController extends Controller
         auth()->user()->update([
             'address' => $request->address,
             'phone' => $request->phone,
-            'kela_id' => $request->kela_id
+            'kelas_id' => $request->kelas_id
         ]);
 
         return redirect('dashboard');

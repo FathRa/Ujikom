@@ -30,7 +30,7 @@
 
             <!-- Kelas -->
             <div class="mt-4">
-                <x-label for="kela_id" :value="__('Class')" />
+                <x-label for="kelas_id" :value="__('Class')" />
 
                 <select name="kelas_id" id="kelas_id"
                     class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">

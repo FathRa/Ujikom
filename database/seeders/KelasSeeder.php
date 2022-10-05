@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Kela;
+use App\Models\Kelas;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class KelaSeeder extends Seeder
+class KelasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class KelaSeeder extends Seeder
      */
     public function run()
     {
-        $kelas = [
+        $listKelas = [
             ['tingkat' => 'X',      'jurusan' => 'RPL'],
             ['tingkat' => 'X',      'jurusan' => 'TKJ'],
             ['tingkat' => 'X',      'jurusan' => 'BNK'],
@@ -42,8 +42,8 @@ class KelaSeeder extends Seeder
             ['tingkat' => 'XII',    'jurusan' => 'FMS'],
         ];
 
-        foreach ($kelas as  $kelas) {
-            Kela::create($kelas);
+        foreach ($listKelas as $kelas) {
+            Kelas::create($kelas);
         }
     }
 }
