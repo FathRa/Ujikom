@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center pt-8 sm:justify-start sm:pt-0">
+<div class="flex justify-center items-center pt-3 sm:justify-start sm:pt-0">
      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-auto text-gray-500" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
